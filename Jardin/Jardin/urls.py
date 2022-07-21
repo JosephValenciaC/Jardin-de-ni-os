@@ -23,10 +23,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.principal, name='Principal'),
-    path('contacto/', views.contacto, name='Contacto'),
+    path('contacto/', views_registros.contacto, name='Contacto'),
     path('pendientes/', views_registros.pendientes, name='Pendientes'),
     path('ninos/', views.ninos, name='Ninos'),
-    path('entregables/', views.entregables, name='Entregables'),
+    path('entregables/', views_registros.entregables, name='Entregables'),
 ]
 
 if settings.DEBUG:
