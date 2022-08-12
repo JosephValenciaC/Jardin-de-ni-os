@@ -3,18 +3,24 @@
 {% block contenido %}
 
 
-<!-- Formulario -->
-
 <div class="col-5 container">
     <div class="row-4">
-        <div class="col-md-12 mb-4">
-            <form class="form-horizontal" action="{% url 'SubirEntregables'%}"  enctype="multipart/form-data" method="POST" role="form">
-                {%csrf_token%}
-            <h1>Agrega las tareas pendientes</h1>
+        <form class="form-horizontal" action="{% url 'RegistrarDuda'%}" method="POST" role="form">
+            {%csrf_token%}
+        <div class="col-md-5">
+            <h1>Dudas</h1>
         </div>
         <div class="mb-3">
-            <label  class="form-label">Nombre del Alumno</label>
-            <input type="text" name="nombreAlumno" class="form-control" placeholder="Javier Alexis">
+            <label class="form-label">Nombre del Padre o Tutor</label>
+            <input type="text" name="nombreP" class="form-control"  placeholder="Nombre padre">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre del Alumno</label>
+            <input type="text" name="nombreA" class="form-control" placeholder="Nombre niño">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Numero de teléfono</label>
+            <input type="text" name="telefono" class="form-control" placeholder="Teléfono">
         </div>
         <div class="mb-3">
             <label class="form-label">Grupo</label>
@@ -33,24 +39,15 @@
             <input type="email" name="correo" class="form-control" placeholder="Javi_1A@example.com">
         </div>
         <div class="mb-3">
-            <label class="form-label">Nota</label>
-            <textarea name="nota" class="form-control" rows="3"></textarea>
+            <label class="form-label">Dudas</label>
+            <textarea class="form-control" name="duda" rows="3" placeholder="Escribe aqui las dudas que tengas sobre las tareas"></textarea>
         </div>
-        <div class="input-group mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Subir Tarea</label><br>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2 control-label text-right">Archivo:</label>
-            <div class="col-sm-10">
-                <input type="file" class="form-control" name="archivo" />
-            </div>
-        </div><br>
         <div class="form-actions text-right">
-            <input type="submit" value="Enviar" class="btn btn-primary">
+            <input type="submit" value="Enviar" class="btn btn-outline-danger">
         </div>
         </form>
     </div>
+    <br>
 </div>
-
 
 {% endblock %}

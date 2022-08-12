@@ -25,8 +25,12 @@ urlpatterns = [
     path('', views.principal, name='Principal'),
     path('contacto/', views_registros.contacto, name='Contacto'),
     path('pendientes/', views_registros.pendientes, name='Pendientes'),
-    path('ninos/', views.ninos, name='Ninos'),
+    path('ninos/', views_registros.ninos, name='Ninos'),
     path('entregables/', views_registros.entregables, name='Entregables'),
+    path('archivos/', views_registros.archivos, name='SubirEntregables'),
+    path('registrarDuda/', views_registros.registrarDuda, name='RegistrarDuda'),
+    path('editarDuda/<int:id>', views_registros.editarDuda, name='EditarDuda'),
+    path('consultarDuda/<int:id>', views_registros.consultarDuda, name='ConsultarDuda'),
 ]
 
 if settings.DEBUG:
